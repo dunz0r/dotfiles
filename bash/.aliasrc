@@ -1,0 +1,94 @@
+# Enhance default commands
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -l'
+alias la='ls -a'
+alias lal='ls -al' # :D
+alias lc='ls --color=never'
+alias lock='vlock -n'
+alias bell='echo -en "\007"'
+alias grep='grep --color=auto'
+alias xm='setxkbmap se && xset r rate 330 45 && xmodmap ~/.Xmodmap'
+alias incognito='chromium --incognito'
+
+# Revision handling
+if which svn &> /dev/null ; then
+	alias sp='svn up' # su is... yeah.
+	alias sc='svn ci -m ""'
+fi
+if which git &> /dev/null ; then
+  alias gc='git commit'
+	alias gb='git branch'
+	alias gO='git checkout'
+	alias gp='git push'
+	alias gP='git push origin'
+	alias gu='git pull' # git update...-ish.
+	alias gU='gu && git submodule update'
+	alias gs='git status'
+	alias gl='git log'
+	alias ga='git add'
+	alias gC='git commit -a && gP'
+	alias gau='git update-index --assume-unchanged' # assume unchanged
+	alias whitespace='git commit -a -m"Fix white space";git push'
+fi
+
+# Rlwrap stuff
+socat='rlwrap socat'
+pftp='rlwrap pftp'
+
+# Some nice aliases
+alias rar=unrar
+alias lock='vlock -n'
+alias aurbuild='sudo -E aurbuild'
+alias webshare='python3 -mhttp.server'
+alias funfact='elinks -dump randomfunfacts.com | egrep "\|.*\||\+\-"'
+alias sshot='scrot -cd 5 screen-%y.%m.%d.%H.%m.png -e "mv \$f ~/gfx/pics/screenshots/ ; echo \" \$n: \$s\n \$wx\$h\n $s\""'
+alias dmget='wget --load-cookies=/home/dunz0r/.local/share/luakit/cookies.txt --user-agent=Firefox'
+
+# MPC
+if which mpc &> /dev/null ; then
+	export MPD_HOST=localhost
+	export MPD_PORT=6600
+	alias npc='mpc --format "%position%. %artist% #[%album%#] - %title%"' # Now playing
+	alias mps='npc toggle' # Stop
+	alias mpl='npc playlist'
+	alias mpg='mpcext -s'
+	alias mpag='mpcext -S' # grep all
+	alias mpa='mpc add'
+	alias mpx='mpc clear'
+	alias mpll='mpc load' # Playlist load
+	alias mpls='mpx && mpll' # Playlist switch
+	alias mpgs='mpcext -sw' # grep switch
+	alias mpp='npc play'
+	alias mpq='mpcext -q' # Queue
+	alias mpr='npc random'
+	alias mpg='mpc --format %number[[%artist% - ]%title%]|[%file%] playlist | egrep -i'
+	alias mpi='mpc --format "%album%, %artist% - %title%"'
+	alias playing='mpc playlist | egrep -A 4 -B 4 ">[0-9]{1,5}.*"'
+fi
+
+# Failsafe! :D
+alias fail='echo -e "\n\033[1;31m   YOURE DOING IT WRONG\033[0m\n"'
+alias sl='fail && ls'
+alias xs='fail && cd'
+alias vf='fail && cd'
+alias vom='fail && vim'
+alias shitdown='fail && shutdown' # :D
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+alias tmux='tmux -2 -u'
+alias mplayer='systemd-inhibit --what=handle-lid-switch:sleep:idle mplayer'
+alias t='todo.sh'
+alias td='date +"%Y-%m-%d"'
+alias t='todo.sh'
+alias apt-cache='apt-cache -n'
+alias vimp='vim -p'
+alias damnit='sudo $(history -p !!)'
+alias vw='vim -c VimwikiIndex'
+alias cdw='cd $WDIR'
+#alias xport='export DISPLAY=$(awk \'/nameserver / {print $2; exit}\' /etc/resolv.conf 2>/dev/null):0'
+flaskstarter='source ~/Development/venvs/flask-starter/bin/activate;export FLASK_ENV=development;export FLASK_APP=manage.py'
+alias vim='lvim'
+alias xkbm='setxkbmap -layout "us" -variant "altgr-intl"'
+alias glcurl='curl --header "PRIVATE-TOKEN: glpat-FpKVr8WKGrhVsoCLq9Nx"'
+alias jqc='jq -C|less -R'
+alias vecka='date +%V'
+alias keeb='setxkbmap -layout "us" -variant "altgr-intl"'
