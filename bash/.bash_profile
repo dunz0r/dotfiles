@@ -133,4 +133,4 @@ function proml {
 	PS1="$TITLEBAR\w$(git_prompt_info) $_HOSTUSER$_NO_COLOUR\n$rts$_GREEN\$>$_LIGHT_GREEN>$_NO_COLOUR "
 }
 export PROMPT_COMMAND=proml
-export PATH=$PATH:/home/gabfor@corp.unibap.net/.spicetify
+export PATH=$PATH:$HOME/.spicetify
