@@ -1,0 +1,7 @@
+configuration {
+  modi: "window,run,ssh,drun";
+  show-icons: true;
+  terminal: "alacritty";
+  icon-theme: "Buuf" ;
+}
+@theme "fancy"
