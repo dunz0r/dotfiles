@@ -8,7 +8,7 @@ alias lock='vlock -n'
 alias bell='echo -en "\007"'
 alias grep='grep --color=auto'
 alias xm='setxkbmap se && xset r rate 330 45 && xmodmap ~/.Xmodmap'
-alias incognito='chromium --incognito'
+alias incognito='firefox --private-window'
 
 # Revision handling
 if which svn &> /dev/null ; then
@@ -40,9 +40,8 @@ alias rar=unrar
 alias lock='vlock -n'
 alias aurbuild='sudo -E aurbuild'
 alias webshare='python3 -mhttp.server'
-alias funfact='elinks -dump randomfunfacts.com | egrep "\|.*\||\+\-"'
+alias funfact='elinks randomfunfacts.com -dump |grep --color=none -E "[┌│└]"'
 alias sshot='scrot -cd 5 screen-%y.%m.%d.%H.%m.png -e "mv \$f ~/gfx/pics/screenshots/ ; echo \" \$n: \$s\n \$wx\$h\n $s\""'
-alias dmget='wget --load-cookies=/home/dunz0r/.local/share/luakit/cookies.txt --user-agent=Firefox'
 
 # MPC
 if which mpc &> /dev/null ; then
@@ -82,12 +81,18 @@ alias t='todo.sh'
 alias apt-cache='apt-cache -n'
 alias vimp='vim -p'
 alias damnit='sudo $(history -p !!)'
-alias vw='vim -c VimwikiIndex'
 alias cdw='cd $WDIR'
-#alias xport='export DISPLAY=$(awk \'/nameserver / {print $2; exit}\' /etc/resolv.conf 2>/dev/null):0'
-flaskstarter='source ~/Development/venvs/flask-starter/bin/activate;export FLASK_ENV=development;export FLASK_APP=manage.py'
+alias xport='export DISPLAY=$(awk \'/nameserver / {print $2; exit}\' /etc/resolv.conf 2>/dev/null):0'
 alias vim='lvim'
+alias vw='vim -c VimwikiIndex'
 alias xkbm='setxkbmap -layout "us" -variant "altgr-intl"'
 alias jqc='jq -C|less -R'
 alias vecka='date +%V'
 alias keeb='setxkbmap -layout "us" -variant "altgr-intl"'
+
+if which spotifycli &> /dev/null; then
+  alias next='spotifycli --next'
+  alias prev='spotifycli --previous'
+  alias play='spotifycli --playpause'
+  alias pause='spotifycli --playpause'
+fi
