@@ -4,4 +4,4 @@ configuration {
   terminal: "alacritty";
   icon-theme: "Buuf" ;
 }
-@theme "fancy"
+@theme "theme"
